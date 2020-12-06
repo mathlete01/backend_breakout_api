@@ -18,16 +18,19 @@ class GamesController < ApplicationController
   def update
     puts('* * * Games Update endpoint hit')
     #byebug
-    #player = Player.find_or_create_by(params[:player_id])
-    #puts("Games Endpoint: player = ${player}")
-    #puts("Games Endpoint: player.id = ${player.id}")
+    puts("* Games Endpoint: params['name'] = #{params['name']}")
+    player = Player.find_or_create_by(name: params['name'])
+    puts("* Games Endpoint: player = #{player}")
+    puts("* Games Endpoint: player.id = #{player.id}")
     # then when I update the game, add in the player id
     
     game = Game.find(params['id'])
+    puts("* Games Endpoint: game = #{game}")
     #game.update(player_id: player.id, keys_pressed: params['keys_pressed'], score: params['score'])
-    puts("Games Endpoint: params['score'] = ${params['score']}")
-    #game.update(player_id: player.id, score: params['score'])
-    game.update(player_id: params['player_id'], score: params['score'])
+    #game.update(player_id: player.id)
+    #game.update(player_id: params['player_id'], score: params['score'])
+    render json: game
+    game.update(player_id: player.id, score: params['score'])
     render json: game
   end
 end
