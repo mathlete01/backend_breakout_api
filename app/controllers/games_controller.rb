@@ -15,7 +15,7 @@ class GamesController < ApplicationController
   end
 
   def update
-    #byebug
+    # byebug
     game = Game.find(params['id'])
     if params['score']
       game.update(score: params['score'])
@@ -26,5 +26,11 @@ class GamesController < ApplicationController
     # 1-endGame: Just update the score
     # 2-updateGame: Associate player id with game
     render json: game
+  end
+
+  def destroy
+    puts('* * * Games: Destroy endpoint hit')
+    game = Game.find(params['id'])
+    game.destroy
   end
 end
