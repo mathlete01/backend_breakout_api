@@ -20,4 +20,9 @@ class PlayersController < ApplicationController
     render json: player
   end
 
+  def destroy
+    puts('* * * Players: Destroy endpoint hit')
+    player = Player.find(params['id'])
+    player.destroy
+  end
 end
