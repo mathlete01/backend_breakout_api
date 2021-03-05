@@ -6,8 +6,8 @@ class GamesController < ApplicationController
   end
 
   def create
+    puts('* * * Games: Create endpoint hit')
     # byebug
-    puts('* * * Games Create endpoint hit')
     game = Game.create(player_id: params['player_id'])
     # Send my newly created player back to the front end as a return
     # This json what i got back from a POST fetch, so it is just the game I posted to the db
@@ -15,6 +15,7 @@ class GamesController < ApplicationController
   end
 
   def update
+    puts('* * * Games: Update endpoint hit')
     # byebug
     game = Game.find(params['id'])
     if params['score']
