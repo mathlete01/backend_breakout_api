@@ -7,6 +7,7 @@ class PlayersController < ApplicationController
 
   def create
     puts('* * * Players: Create endpoint hit')
+    # byebug
     player = Player.create
     # Send my newly created player back to the front end as a return
     # This json what i got back from a POST fetch, so it is just the player I posted to the db
