@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   patch "games", to: "games#update"
   delete "games", to: "games#destroy"
 
+  get "/", to: "application#hello"
+
 end
