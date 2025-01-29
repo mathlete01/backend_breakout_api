@@ -1,0 +1,26 @@
+{
+  "name": "backend_breakout_api",
+  "version": "1.0.0",
+  "description": "QWERTYBall.com is a breakout-like game where you have to hit the keys on your keyboard to keep the ball in play",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathlete01/backend_breakout_api.git"
+  },
+  "author": "Matty Sallin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mathlete01/backend_breakout_api/issues"
+  },
+  "homepage": "https://github.com/mathlete01/backend_breakout_api#readme",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
+}
