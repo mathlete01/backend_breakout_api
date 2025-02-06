@@ -1,39 +1,29 @@
-# SQLite. Versions 3.8.0 and up are supported.
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-#
-# default: &default
-#   adapter: sqlite3
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-#   timeout: 5000
-
 default: &default
   adapter: postgresql
   encoding: unicode
-  # For details on connection pooling, see Rails configuration guide
-  # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
-development:
-  # <<: *default
-  # database: db/development.sqlite3
-  adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
 development:
   <<: *default
   database: qwertyball_dev
+  username: khltadmkvnovme
+  password: a773e26c91895ae552c0c25bdd4cf8e8386d28e6a5fdde861a3613b43e5297ac
+  host: ec2-54-157-79-121.compute-1.amazonaws.com
+  port: 5432
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
 test:
   <<: *default
   database: qwertyball_test
+  username: khltadmkvnovme
+  password: a773e26c91895ae552c0c25bdd4cf8e8386d28e6a5fdde861a3613b43e5297ac
+  host: ec2-54-157-79-121.compute-1.amazonaws.com
+  port: 5432
 
 production:
   <<: *default
   database: qwertyball_prod
+  username: khltadmkvnovme
+  password: a773e26c91895ae552c0c25bdd4cf8e8386d28e6a5fdde861a3613b43e5297ac
+  host: ec2-54-157-79-121.compute-1.amazonaws.com
+  port: 5432
