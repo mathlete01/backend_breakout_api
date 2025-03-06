@@ -22,8 +22,4 @@ test:
 
 production:
   <<: *default
-  database: qwertyball_prod
-  username: khltadmkvnovme
-  password: a773e26c91895ae552c0c25bdd4cf8e8386d28e6a5fdde861a3613b43e5297ac
-  host: ec2-54-157-79-121.compute-1.amazonaws.com
-  port: 5432
+  url: <%= ENV['DATABASE_URL'] %>
